@@ -2,7 +2,7 @@ import sys
 
 from PyQt5.QtSql import QSqlTableModel
 from ui.Ui_main import Ui_MainWindow
-from ui.models.artists import Artist
+from models.artists import Artist
 
 class Window(Ui_MainWindow):
 
