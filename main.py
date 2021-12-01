@@ -1,13 +1,10 @@
 import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
-
-from Ui_main import Ui_MainWindow
-
 from PyQt5.QtSql import QSqlDatabase
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
+from window import Window
 
-if __name__ == "__main__":
 
+def main():
     connection = QSqlDatabase.addDatabase("QSQLITE")
     connection.setDatabaseName("test.db")
 
@@ -21,9 +18,11 @@ if __name__ == "__main__":
         )
         sys.exit(1)
 
-
     MainWindow = QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    window = Window(MainWindow)
     MainWindow.show()
-    sys.exit(app.exec_())
+    app.exec_()
+
+
+if __name__ == "__main__":
+    main()
